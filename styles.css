@@ -114,17 +114,25 @@ section {
   line-height: 1.45;
 }
 
-@media (max-width: 560px) {
-  body {
-    font-size: 22px;
-  }
-
-  .page {
-    width: min(100% - 28px, 760px);
-    padding-top: 28px;
-  }
-
-  .nav {
-    margin-bottom: 54px;
-  }
-}
+ @media (max-width: 560px) {
+   body {
+     font-size: 18px;
+     line-height: 1.5;
+   }
+ 
+   .page {
+     width: min(100% - 28px, 760px);
+     padding-top: 24px;
+     padding-bottom: 64px;
+   }
+ 
+   .nav {
+     margin-bottom: 42px;
+     gap: 6px 14px;
+     font-size: 18px;
+   }
+ 
+   .intro p {
+     text-align: left;
+   }
+ }
