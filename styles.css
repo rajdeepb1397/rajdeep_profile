@@ -1,9 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap");
+
 :root {
   color-scheme: dark;
   --bg: #000;
   --text: #fff;
-  --muted: #b8b8b8;
   --highlight: #fff;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #efe2c8;
+  --text: #000;
+  --highlight: #000;
 }
 
 * {
@@ -18,7 +26,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Garamond, "EB Garamond", Georgia, "Times New Roman", serif;
+  font-family: "EB Garamond";
   font-size: clamp(24px, 2.2vw, 30px);
   line-height: 1.45;
 }
@@ -47,13 +55,24 @@ a:focus-visible {
 .nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   gap: 8px 18px;
   margin-bottom: 72px;
   font-size: clamp(22px, 2vw, 28px);
 }
 
-.nav a {
+.nav a,
+.theme-toggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
   text-decoration: none;
+}
+
+.theme-toggle {
+  cursor: pointer;
 }
 
 h1,
@@ -79,11 +98,11 @@ h2 {
 p {
   max-width: 680px;
   margin-bottom: 26px;
-  color: var(--muted);
+  color: var(--text);
 }
 
 .intro p {
-  text-align: justify;
+  text-align: left;
 }
 
 .intro img {
@@ -96,6 +115,10 @@ p {
 
 section {
   padding-top: 56px;
+}
+
+.built-list {
+  padding-top: 8px;
 }
 
 #connect p {
