@@ -8,7 +8,12 @@ if (savedTheme === "light") {
 
 function updateToggleLabel() {
   if (!toggle) return;
-  toggle.textContent = root.dataset.theme === "light" ? "dark" : "light";
+  const isLight = root.dataset.theme === "light";
+  toggle.textContent = isLight ? "\u263e" : "\u2600";
+  toggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark mode" : "Switch to light mode",
+  );
 }
 
 toggle?.addEventListener("click", () => {

@@ -9,7 +9,7 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #efe2c8;
+  --bg: #fff;
   --text: #000;
   --highlight: #000;
 }
@@ -52,12 +52,22 @@ a:focus-visible {
   padding: 38px 0 90px;
 }
 
+.site-header {
+  margin-bottom: 72px;
+}
+
+.site-name {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: clamp(32px, 3vw, 42px);
+  text-decoration: none;
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 8px 18px;
-  margin-bottom: 72px;
   font-size: clamp(22px, 2vw, 28px);
 }
 
@@ -73,6 +83,13 @@ a:focus-visible {
 
 .theme-toggle {
   cursor: pointer;
+}
+
+a.active,
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--highlight);
+  color: var(--bg);
 }
 
 h1,
@@ -118,7 +135,7 @@ section {
 }
 
 .built-list {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 #connect p {
@@ -148,11 +165,19 @@ section {
      padding-top: 24px;
      padding-bottom: 64px;
    }
- 
-   .nav {
+
+   .site-header {
      margin-bottom: 42px;
-     gap: 6px 14px;
-     font-size: 18px;
+   }
+
+   .site-name {
+    margin-bottom: 18px;
+    font-size: 28px;
+   }
+  
+   .nav {
+    gap: 6px 14px;
+    font-size: 18px;
    }
  
    .intro p {
